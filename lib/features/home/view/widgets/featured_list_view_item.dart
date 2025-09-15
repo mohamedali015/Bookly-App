@@ -1,5 +1,5 @@
+import 'package:bookly/core/shared_widgets/app_aspect_ratio_images.dart';
 import 'package:bookly/core/utils/app_assets.dart';
-import 'package:bookly/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class FeaturedListViewItem extends StatelessWidget {
@@ -7,17 +7,10 @@ class FeaturedListViewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 2.7 / 4,
-      child: Container(
-        decoration: BoxDecoration(
-            color: AppColors.white,
-            borderRadius: BorderRadius.circular(16),
-            image: DecorationImage(
-              image: AssetImage(AppAssets.bookImageTest),
-              fit: BoxFit.fill,
-            )),
-      ),
+    return AppAspectRatioImages(
+      image: AssetImage(AppAssets.bookImageTest),
+      aspectRatio: 150 / 224,
     );
   }
 }
+
