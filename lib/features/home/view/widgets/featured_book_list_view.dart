@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/helper/my_responsive.dart';
-import 'custom_list_view_item.dart';
+import 'featured_list_view_item.dart';
 
 class FeaturedBookListView extends StatelessWidget {
   const FeaturedBookListView({super.key});
@@ -16,7 +16,7 @@ class FeaturedBookListView extends StatelessWidget {
         itemBuilder: (context, index) {
           return Padding(
             padding: MyResponsive.paddingSymmetric(context, horizontal: 7),
-            child: CustomListViewItem(),
+            child: FeaturedListViewItem(),
           );
         },
       ),
