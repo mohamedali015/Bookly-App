@@ -1,4 +1,6 @@
 import 'package:bookly/core/helper/my_responsive.dart';
+import 'package:bookly/core/utils/app_font_styles.dart';
+import 'package:bookly/core/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 
 import 'custom_app_bar.dart';
@@ -13,12 +15,20 @@ class HomeViewBody extends StatelessWidget {
       padding:
           MyResponsive.paddingSymmetric(context, horizontal: 30, vertical: 40),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomAppBar(),
           SizedBox(
             height: MyResponsive.height(context, value: 30),
           ),
           const FeaturedBookListView(),
+          SizedBox(
+            height: MyResponsive.height(context, value: 50),
+          ),
+          Text(
+            AppStrings.bestSeller,
+            style: AppFontStyles.regularF18(context),
+          ),
         ],
       ),
     );
