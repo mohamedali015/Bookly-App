@@ -46,7 +46,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         SlidingImage(slidingAnimation: slidingAnimation),
-        SizedBox(height: MyResponsive.height(context, value: 4)),
+        SizedBox(height: MyResponsive.height(value: 4)),
         Text(
           'Read Free Books',
           textAlign: TextAlign.center,

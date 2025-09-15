@@ -9,13 +9,13 @@ class FeaturedBookListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MyResponsive.height(context, value: 210),
+      height: MyResponsive.height(value: 210),
       child: ListView.builder(
         itemCount: 10,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return Padding(
-            padding: MyResponsive.paddingOnly(context, right: 14),
+            padding: MyResponsive.paddingOnly(right: 14),
             child: FeaturedListViewItem(),
           );
         },

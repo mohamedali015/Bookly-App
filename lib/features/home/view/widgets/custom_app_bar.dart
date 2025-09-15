@@ -11,14 +11,14 @@ class CustomAppBar extends StatelessWidget {
       children: [
         Image.asset(
           AppAssets.logo,
-          height: MyResponsive.height(context, value: 18),
+          height: MyResponsive.height(value: 18),
         ),
         const Spacer(),
         IconButton(
             onPressed: () {},
             icon: Icon(
               Icons.search,
-              size: MyResponsive.width(context, value: 30),
+              size: MyResponsive.width(value: 30),
             )),
       ],
     );

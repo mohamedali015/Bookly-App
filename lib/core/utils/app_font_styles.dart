@@ -5,52 +5,47 @@ import '../helper/my_responsive.dart';
 import 'app_colors.dart';
 
 abstract class AppFontStyles {
-  static TextStyle textF14(
-    BuildContext context, {
+  static TextStyle textF14({
     Color color = AppColors.white,
   }) =>
       TextStyle(
-        fontSize: MyResponsive.fontSize(context, value: 14),
+        fontSize: MyResponsive.fontSize(value: 14),
         fontWeight: FontWeight.w400,
         color: color,
       );
 
-  static TextStyle textF16(
-    BuildContext context, {
+  static TextStyle textF16({
     Color color = AppColors.white,
   }) =>
       TextStyle(
-        fontSize: MyResponsive.fontSize(context, value: 16),
+        fontSize: MyResponsive.fontSize(value: 16),
         fontWeight: FontWeight.w500,
         color: color,
       );
 
-  static TextStyle textF18(
-    BuildContext context, {
+  static TextStyle textF18({
     Color color = AppColors.white,
   }) =>
       TextStyle(
-        fontSize: MyResponsive.fontSize(context, value: 18),
+        fontSize: MyResponsive.fontSize(value: 18),
         fontWeight: FontWeight.w400,
         color: color,
       );
 
-  static TextStyle textF20(
-    BuildContext context, {
+  static TextStyle textF20({
     Color color = AppColors.white,
   }) =>
       TextStyle(
-        fontSize: MyResponsive.fontSize(context, value: 20),
+        fontSize: MyResponsive.fontSize(value: 20),
         fontWeight: FontWeight.w400,
         color: color,
       );
 
-  static TextStyle textF30(
-    BuildContext context, {
+  static TextStyle textF30({
     Color color = AppColors.white,
   }) =>
       TextStyle(
-        fontSize: MyResponsive.fontSize(context, value: 30),
+        fontSize: MyResponsive.fontSize(value: 30),
         fontWeight: FontWeight.w400,
         fontFamily: AppConstants.fontFamily,
         color: color,

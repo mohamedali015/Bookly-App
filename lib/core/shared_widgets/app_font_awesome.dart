@@ -22,7 +22,7 @@ class AppFontAwesomeIcons extends StatelessWidget {
   Widget build(BuildContext context) {
     return FaIcon(
       icon,
-      size: size ?? MyResponsive.width(context, value: 30),
+      size: size ?? MyResponsive.width(value: 30),
       color: color ?? AppColors.white,
       textDirection: direction ?? TextDirection.ltr,
     );
