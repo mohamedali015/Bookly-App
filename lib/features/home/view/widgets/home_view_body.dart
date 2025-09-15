@@ -1,9 +1,8 @@
 import 'package:bookly/core/helper/my_responsive.dart';
-import 'package:bookly/core/shared_widgets/app_font_awesome.dart';
-import 'package:bookly/core/utils/app_assets.dart';
 import 'package:flutter/material.dart';
 
 import 'custom_app_bar.dart';
+import 'featured_book_list_view.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -16,6 +15,10 @@ class HomeViewBody extends StatelessWidget {
       child: Column(
         children: [
           CustomAppBar(),
+          SizedBox(
+            height: MyResponsive.height(context, value: 30),
+          ),
+          const FeaturedBookListView(),
         ],
       ),
     );
