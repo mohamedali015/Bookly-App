@@ -4,19 +4,19 @@ abstract class MyNavigator {
   static goTo({
     required screen,
     bool isReplace = false,
-    Transition transition = Transition.rightToLeftWithFade,
+    Transition transition = Transition.topLevel,
     Duration? duration,
   }) {
     if (isReplace) {
       Get.offAll(
         screen,
-        transition: Transition.rightToLeftWithFade,
+        transition: transition,
         duration: duration ?? Duration(milliseconds: 300),
       );
     } else {
       Get.to(
         screen,
-        transition: Transition.rightToLeftWithFade,
+        transition: transition,
         duration: duration ?? Duration(milliseconds: 300),
       );
     }
