@@ -1,5 +1,5 @@
 import 'package:bookly/core/helper/my_responsive.dart';
-import 'package:bookly/core/shared_widgets/app_aspect_ratio_images.dart';
+import 'package:bookly/core/shared_widgets/custom_book_image.dart';
 import 'package:bookly/core/utils/app_colors.dart';
 import 'package:bookly/core/utils/app_constrains.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +24,7 @@ class BestSellerListViewItem extends StatelessWidget {
         height: MyResponsive.height(value: 110),
         child: Row(
           children: [
-            AppAspectRatioImages(
+            CustomBookImage(
               image: AssetImage(
                 AppAssets.bookImageTest,
               ),

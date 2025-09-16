@@ -1,3 +1,4 @@
+import 'package:bookly/features/book_details/view/book_details_view.dart';
 import 'package:bookly/features/home/view/home_view.dart';
 import 'package:bookly/features/splash/view/splash_view.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: const SplashView(),
+      child: const BookDetailsView(),
     );
   }
 }

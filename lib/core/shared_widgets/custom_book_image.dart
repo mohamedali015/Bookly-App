@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AppAspectRatioImages extends StatelessWidget {
-  const AppAspectRatioImages({
+class CustomBookImage extends StatelessWidget {
+  const CustomBookImage({
     super.key,
     required this.image,
     required this.aspectRatio,

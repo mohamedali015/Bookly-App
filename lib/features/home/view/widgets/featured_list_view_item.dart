@@ -1,4 +1,4 @@
-import 'package:bookly/core/shared_widgets/app_aspect_ratio_images.dart';
+import 'package:bookly/core/shared_widgets/custom_book_image.dart';
 import 'package:bookly/core/utils/app_assets.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +7,7 @@ class FeaturedListViewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppAspectRatioImages(
+    return CustomBookImage(
       image: AssetImage(AppAssets.bookImageTest),
       aspectRatio: 150 / 224,
     );
