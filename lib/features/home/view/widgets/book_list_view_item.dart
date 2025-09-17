@@ -10,8 +10,8 @@ import '../../../../core/utils/app_font_styles.dart';
 import '../../../book_details/view/book_details_view.dart';
 import 'book_rating.dart';
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
+class BookListViewItem extends StatelessWidget {
+  const BookListViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
