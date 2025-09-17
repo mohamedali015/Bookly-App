@@ -22,6 +22,10 @@ class SlidingImage extends StatelessWidget {
           ),
         );
       },
+      child: Image.asset(
+        AppAssets.logo,
+        // height: MyResponsive.height(context, value: 250),
+      ),
     );
   }
 }
