@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../helper/my_responsive.dart';
+
 class CustomBookImage extends StatelessWidget {
   const CustomBookImage({
     super.key,
@@ -16,7 +18,7 @@ class CustomBookImage extends StatelessWidget {
       aspectRatio: aspectRatio,
       child: Container(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(MyResponsive.radius(value: 8)),
             image: DecorationImage(
               image: image,
               fit: BoxFit.fill,

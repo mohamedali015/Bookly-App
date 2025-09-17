@@ -46,7 +46,7 @@ abstract class AppFontStyles {
   }) =>
       TextStyle(
         fontSize: MyResponsive.fontSize(value: 30),
-        fontWeight: FontWeight.w400,
+        fontWeight: FontWeight.w600,
         fontFamily: AppConstants.fontFamily,
         color: color,
       );

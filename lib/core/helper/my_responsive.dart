@@ -1,14 +1,20 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:flutter/material.dart';
 
 abstract class MyResponsive {
-  static double height({required double value}) => value.h;
-
+  /// Responsive width
   static double width({required double value}) => value.w;
 
+  /// Responsive height
+  static double height({required double value}) => value.h;
+
+  /// Responsive font size
   static double fontSize({required double value}) => value.sp;
 
+  /// Responsive radius (BorderRadius / Border / any square dimension)
+  static double radius({required double value}) => value.r;
+
+  /// Responsive symmetric padding (horizontal & vertical)
   static EdgeInsets paddingSymmetric({
     double? horizontal,
     double? vertical,
@@ -19,6 +25,7 @@ abstract class MyResponsive {
     );
   }
 
+  /// Responsive padding for each side (left, right, top, bottom)
   static EdgeInsets paddingOnly({
     double? left,
     double? right,
@@ -33,6 +40,7 @@ abstract class MyResponsive {
     );
   }
 
+  /// Responsive padding applied equally on all sides
   static EdgeInsets paddingAll({required double value}) {
     return EdgeInsets.all(value.w);
   }

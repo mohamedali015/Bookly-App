@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: const BookDetailsView(),
+      child: const SplashView(),
     );
   }
 }

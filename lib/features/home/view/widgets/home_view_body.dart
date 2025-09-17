@@ -1,4 +1,5 @@
 import 'package:bookly/core/helper/my_responsive.dart';
+import 'package:bookly/core/utils/app_colors.dart';
 import 'package:bookly/core/utils/app_font_styles.dart';
 import 'package:bookly/core/utils/app_strings.dart';
 import 'package:flutter/material.dart';
@@ -13,14 +14,20 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: MyResponsive.paddingOnly(top: 40, left: 30, right: 30),
+      padding: MyResponsive.paddingOnly(left: 30, right: 30),
       child: CustomScrollView(
         slivers: [
+          SliverAppBar(
+            pinned: true,
+            backgroundColor: AppColors.primary,
+            surfaceTintColor: AppColors.transparent,
+            titleSpacing: 0,
+            title: CustomAppBar(),
+          ),
           SliverToBoxAdapter(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CustomAppBar(),
                 SizedBox(
                   height: MyResponsive.height(value: 30),
                 ),
