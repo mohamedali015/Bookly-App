@@ -12,6 +12,3 @@ class SplashView extends StatelessWidget {
     );
   }
 }
-
-
-

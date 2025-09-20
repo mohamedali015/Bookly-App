@@ -13,4 +13,3 @@ class FeaturedListViewItem extends StatelessWidget {
     );
   }
 }
-
