@@ -4,7 +4,7 @@ import 'package:bookly/core/utils/app_font_styles.dart';
 import 'package:bookly/core/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 
-import 'best_seller_list_view.dart';
+import 'newest_books.dart';
 import 'custom_app_bar.dart';
 import 'featured_book_list_view.dart';
 
@@ -35,7 +35,7 @@ class HomeViewBody extends StatelessWidget {
                 SizedBox(
                   height: MyResponsive.height(value: 50),
                 ),
-                Text(AppStrings.bestSeller, style: AppFontStyles.textF18()),
+                Text(AppStrings.newest, style: AppFontStyles.textF18()),
                 SizedBox(
                   height: MyResponsive.height(value: 20),
                 ),
