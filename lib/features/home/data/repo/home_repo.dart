@@ -1,7 +1,8 @@
 import 'package:bookly/core/network/api_helper.dart';
 import 'package:bookly/core/network/end_points.dart';
-import 'package:bookly/features/home/data/models/book_model/book_model.dart';
 import 'package:dartz/dartz.dart';
+
+import '../models/book_models/book_model/book_model.dart';
 
 class HomeRepo {
   // singleton pattern

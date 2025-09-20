@@ -4,7 +4,7 @@ import 'package:bookly/core/utils/app_font_styles.dart';
 import 'package:bookly/core/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 
-import 'newest_books.dart';
+import 'newest_books_list_view.dart';
 import 'custom_app_bar.dart';
 import 'featured_book_list_view.dart';
 
@@ -16,6 +16,7 @@ class HomeViewBody extends StatelessWidget {
     return Padding(
       padding: MyResponsive.paddingOnly(left: 30, right: 30),
       child: CustomScrollView(
+        physics: const NeverScrollableScrollPhysics(),
         slivers: [
           SliverAppBar(
             pinned: true,
@@ -43,7 +44,7 @@ class HomeViewBody extends StatelessWidget {
             ),
           ),
           SliverFillRemaining(
-            child: BestSellerListView(),
+            child: NewestBooksListView(),
           )
         ],
       ),

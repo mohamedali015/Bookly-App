@@ -4,7 +4,10 @@ import 'package:bookly/core/utils/app_font_styles.dart';
 import 'package:flutter/material.dart';
 
 class BookRating extends StatelessWidget {
-  const BookRating({super.key});
+  const BookRating({super.key, required this.rating, required this.count});
+
+  final double? rating;
+  final int? count;
 
   @override
   Widget build(BuildContext context) {
@@ -19,14 +22,14 @@ class BookRating extends StatelessWidget {
           width: MyResponsive.width(value: 6),
         ),
         Text(
-          "4.8",
+          rating != null ? rating.toString() : '0',
           style: AppFontStyles.textF16(),
         ),
         const SizedBox(
           width: 6,
         ),
         Text(
-          "(2640)",
+          count != null ? '($count)' : '(0)',
           style: AppFontStyles.textF14(color: AppColors.grey),
         )
       ],

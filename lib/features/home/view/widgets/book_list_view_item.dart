@@ -7,12 +7,13 @@ import 'package:flutter/material.dart';
 import '../../../../core/helper/my_navigator.dart';
 import '../../../../core/utils/app_font_styles.dart';
 import '../../../book_details/view/book_details_view.dart';
+import '../../data/models/book_models/book_model/book_model.dart';
 import 'book_rating.dart';
 
 class BookListViewItem extends StatelessWidget {
-  const BookListViewItem({super.key, required this.imageUrl});
+  const BookListViewItem({super.key, required this.book});
 
-  final String imageUrl;
+  final BookModel book;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class BookListViewItem extends StatelessWidget {
         child: Row(
           children: [
             CustomBookImage(
-              imageUrl: imageUrl,
+              imageUrl: book.volumeInfo.imageLinks.thumbnail,
               aspectRatio: 70 / 105,
             ),
             SizedBox(
@@ -39,7 +40,7 @@ class BookListViewItem extends StatelessWidget {
                   SizedBox(
                     width: MyResponsive.width(value: 207),
                     child: Text(
-                      "Harry Potter and the Goblet of Fire",
+                      book.volumeInfo.title!,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: AppFontStyles.textF20()
@@ -50,7 +51,7 @@ class BookListViewItem extends StatelessWidget {
                     height: MyResponsive.height(value: 3),
                   ),
                   Text(
-                    "J.K. Rowling",
+                    book.volumeInfo.authors!.first,
                     style: AppFontStyles.textF14(
                       color: AppColors.grey,
                     ),
@@ -58,12 +59,15 @@ class BookListViewItem extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        "19.99 €",
+                        'Free',
                         style: AppFontStyles.textF20()
                             .copyWith(fontWeight: FontWeight.bold),
                       ),
                       const Spacer(),
-                      BookRating()
+                      BookRating(
+                        rating: book.volumeInfo.averageRating,
+                        count: book.volumeInfo.ratingsCount,
+                      )
                     ],
                   )
                 ],

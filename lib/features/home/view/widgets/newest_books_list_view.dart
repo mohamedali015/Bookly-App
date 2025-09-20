@@ -8,8 +8,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/shared_widgets/custom_loading_indicator.dart';
 import 'book_list_view_item.dart';
 
-class BestSellerListView extends StatelessWidget {
-  const BestSellerListView({super.key});
+class NewestBooksListView extends StatelessWidget {
+  const NewestBooksListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +18,13 @@ class BestSellerListView extends StatelessWidget {
       if (state is NewestBooksSuccess) {
         return ListView.builder(
           padding: EdgeInsets.zero,
-          physics: const NeverScrollableScrollPhysics(),
-          itemCount: 10,
+          // physics: const NeverScrollableScrollPhysics(),
+          itemCount: state.books.length,
           itemBuilder: (context, index) {
             return Padding(
               padding: MyResponsive.paddingOnly(bottom: 20),
               child: BookListViewItem(
-                imageUrl: state.books[index].volumeInfo.imageLinks.thumbnail,
+                book: state.books[index],
               ),
             );
           },

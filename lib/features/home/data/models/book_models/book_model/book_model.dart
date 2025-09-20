@@ -44,16 +44,16 @@ class BookModel extends Equatable {
             : SearchInfo.fromJson(json['searchInfo'] as Map<String, dynamic>),
       );
 
-  Map<String, dynamic> toJson() => {
-        'kind': kind,
-        'id': id,
-        'etag': etag,
-        'selfLink': selfLink,
-        'volumeInfo': volumeInfo.toJson(),
-        'saleInfo': saleInfo?.toJson(),
-        'accessInfo': accessInfo?.toJson(),
-        'searchInfo': searchInfo?.toJson(),
-      };
+  // Map<String, dynamic> toJson() => {
+  //       'kind': kind,
+  //       'id': id,
+  //       'etag': etag,
+  //       'selfLink': selfLink,
+  //       'volumeInfo': volumeInfo.toJson(),
+  //       'saleInfo': saleInfo?.toJson(),
+  //       'accessInfo': accessInfo?.toJson(),
+  //       'searchInfo': searchInfo?.toJson(),
+  //     };
 
   @override
   List<Object?> get props {

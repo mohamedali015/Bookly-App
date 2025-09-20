@@ -31,7 +31,7 @@ class BooksDetailsSection extends StatelessWidget {
         SizedBox(
           height: MyResponsive.height(value: 20),
         ),
-        BookRating(),
+        // BookRating(),
         SizedBox(
           height: MyResponsive.height(value: 37),
         ),
