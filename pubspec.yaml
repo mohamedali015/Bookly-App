@@ -39,6 +39,7 @@ dependencies:
   google_fonts:
   flutter_screenutil: ^5.9.3
   equatable:
+  flutter_bloc:
 
   #network
   dio:
