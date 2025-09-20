@@ -5,11 +5,11 @@ import '../helper/my_responsive.dart';
 class CustomBookImage extends StatelessWidget {
   const CustomBookImage({
     super.key,
-    required this.image,
+    required this.imageUrl,
     required this.aspectRatio,
   });
 
-  final ImageProvider image;
+  final String imageUrl;
   final double aspectRatio;
 
   @override
@@ -20,7 +20,7 @@ class CustomBookImage extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(MyResponsive.radius(value: 8)),
             image: DecorationImage(
-              image: image,
+              image: NetworkImage(imageUrl),
               fit: BoxFit.fill,
             )),
       ),

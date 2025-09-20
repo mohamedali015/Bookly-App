@@ -35,13 +35,13 @@ class BookDetailsViewBody extends StatelessWidget {
                 SizedBox(
                   height: MyResponsive.height(value: 36),
                 ),
-                Padding(
-                  padding: MyResponsive.paddingSymmetric(horizontal: 76),
-                  child: CustomBookImage(
-                    image: AssetImage(AppAssets.bookImageTest),
-                    aspectRatio: 162 / 210,
-                  ),
-                ),
+                // Padding(
+                //   padding: MyResponsive.paddingSymmetric(horizontal: 76),
+                //   child: CustomBookImage(
+                //     image: AssetImage(AppAssets.bookImageTest),
+                //     aspectRatio: 162 / 210,
+                //   ),
+                // ),
                 SizedBox(
                   height: MyResponsive.height(value: 42),
                 ),

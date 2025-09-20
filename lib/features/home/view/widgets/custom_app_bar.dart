@@ -18,7 +18,7 @@ class CustomAppBar extends StatelessWidget {
         const Spacer(),
         IconButton(
             onPressed: () {
-              MyNavigator.goTo(screen: SearchView());
+              // MyNavigator.goTo(screen: SearchView());
             },
             icon: Icon(
               Icons.search,

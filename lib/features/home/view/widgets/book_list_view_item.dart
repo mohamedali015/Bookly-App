@@ -5,13 +5,14 @@ import 'package:bookly/core/utils/app_constrains.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/helper/my_navigator.dart';
-import '../../../../core/utils/app_assets.dart';
 import '../../../../core/utils/app_font_styles.dart';
 import '../../../book_details/view/book_details_view.dart';
 import 'book_rating.dart';
 
 class BookListViewItem extends StatelessWidget {
-  const BookListViewItem({super.key});
+  const BookListViewItem({super.key, required this.imageUrl});
+
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +26,7 @@ class BookListViewItem extends StatelessWidget {
         child: Row(
           children: [
             CustomBookImage(
-              image: AssetImage(
-                AppAssets.bookImageTest,
-              ),
+              imageUrl: imageUrl,
               aspectRatio: 70 / 105,
             ),
             SizedBox(
