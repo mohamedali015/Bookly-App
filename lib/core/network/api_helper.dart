@@ -14,8 +14,8 @@ class ApiHelper {
   ApiHelper._init() {
     dio = Dio(BaseOptions(
       baseUrl: EndPoints.baseUrl,
-      connectTimeout: Duration(seconds: 10),
-      receiveTimeout: Duration(seconds: 10),
+      connectTimeout: Duration(seconds: 5),
+      receiveTimeout: Duration(seconds: 5),
     ));
 
     dio.interceptors.add(InterceptorsWrapper(
