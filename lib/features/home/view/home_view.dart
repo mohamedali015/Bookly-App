@@ -9,17 +9,9 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-            create: (context) => FeaturedBooksCubit()..fetchFeaturedBooks()),
-        BlocProvider(
-            create: (context) => NewestBooksCubit()..fetchNewestBooks()),
-      ],
-      child: Scaffold(
-        body: SafeArea(
-          child: const HomeViewBody(),
-        ),
+    return Scaffold(
+      body: SafeArea(
+        child: const HomeViewBody(),
       ),
     );
   }

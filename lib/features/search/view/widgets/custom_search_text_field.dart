@@ -3,15 +3,19 @@ import 'package:bookly/core/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/helper/my_responsive.dart';
+import '../../manager/search_cubit/search_cubit.dart';
 
 class CustomSearchTextField extends StatelessWidget {
   const CustomSearchTextField({super.key});
 
   @override
   Widget build(BuildContext context) {
+    SearchCubit cubit = SearchCubit.get(context);
     return TextField(
       cursorColor: AppColors.white,
       decoration: _inputDecoration(context),
+      onChanged: (value) => cubit.fetchSearchBooks(value),
+      focusNode: cubit.focusNode,
     );
   }
 
