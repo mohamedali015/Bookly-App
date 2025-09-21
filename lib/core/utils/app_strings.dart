@@ -4,4 +4,7 @@ abstract class AppStrings {
   static const String searchHint = "Find your book...";
   static const String searchResult = "Search Results";
   static const String noResults = "No Results";
+
+  static const String preview = "Preview";
+  static const String notAvailable = "Not Available";
 }

@@ -21,8 +21,10 @@ class BookDetailsCubit extends Cubit<BookDetailsState> {
   }
 
   void previewOnPressed() async {
-    final url =
-        _fixUrl(book.volumeInfo?.previewLink ?? 'https://www.google.com');
+    if (book.volumeInfo?.previewLink == null) {
+      return;
+    }
+    final url = _fixUrl(book.volumeInfo!.previewLink!);
     Uri uri = Uri.parse(url);
     if (!await launchUrl(uri)) {
       throw Exception('Could not launch $uri');

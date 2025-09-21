@@ -1,9 +1,11 @@
 import 'package:bookly/core/shared_widgets/custom_button.dart';
 import 'package:bookly/core/utils/app_colors.dart';
+import 'package:bookly/core/utils/app_strings.dart';
 import 'package:bookly/features/book_details/manager/book_details_cubit/book_details_cubit.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/helper/my_responsive.dart';
+import '../../../home/data/models/book_models/book_model/book_model.dart';
 
 class BookAction extends StatelessWidget {
   const BookAction({super.key});
@@ -25,7 +27,7 @@ class BookAction extends StatelessWidget {
           )),
           Expanded(
               child: CustomButton(
-            text: 'Preview',
+            text: showText(cubit.book),
             onPressed: cubit.previewOnPressed,
             backgroundColor: AppColors.orange,
             textColor: AppColors.white,
@@ -37,5 +39,13 @@ class BookAction extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  String showText(BookModel bookModel) {
+    if (bookModel.volumeInfo?.previewLink != null) {
+      return AppStrings.preview;
+    } else {
+      return AppStrings.notAvailable;
+    }
   }
 }
