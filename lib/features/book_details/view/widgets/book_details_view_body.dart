@@ -1,6 +1,7 @@
 import 'package:bookly/core/helper/my_responsive.dart';
-import 'package:bookly/core/utils/app_assets.dart';
 import 'package:bookly/core/utils/app_colors.dart';
+import 'package:bookly/features/book_details/manager/book_details_cubit/book_details_cubit.dart';
+import 'package:bookly/features/home/data/models/book_models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/shared_widgets/custom_book_image.dart';
@@ -13,6 +14,7 @@ class BookDetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    BookModel cubit = BookDetailsCubit.get(context).book;
     return Padding(
       padding: MyResponsive.paddingOnly(
         left: 30,
@@ -35,21 +37,26 @@ class BookDetailsViewBody extends StatelessWidget {
                 SizedBox(
                   height: MyResponsive.height(value: 36),
                 ),
-                // Padding(
-                //   padding: MyResponsive.paddingSymmetric(horizontal: 76),
-                //   child: CustomBookImage(
-                //     image: AssetImage(AppAssets.bookImageTest),
-                //     aspectRatio: 162 / 210,
-                //   ),
-                // ),
+                Padding(
+                  padding: MyResponsive.paddingSymmetric(horizontal: 76),
+                  child: CustomBookImage(
+                    imageUrl: cubit.volumeInfo?.imageLinks?.thumbnail ?? '',
+                    aspectRatio: 162 / 210,
+                  ),
+                ),
                 SizedBox(
                   height: MyResponsive.height(value: 42),
                 ),
-                BooksDetailsSection(),
+                BooksDetailsSection(
+                  book: cubit,
+                ),
                 SizedBox(
                   height: MyResponsive.height(value: 50),
                 ),
                 SimilarBooksSection(),
+                SizedBox(
+                  height: MyResponsive.height(value: 40),
+                ),
               ],
             ),
           )

@@ -3,7 +3,9 @@ import 'package:bookly/core/shared_widgets/custom_loading_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/helper/my_navigator.dart';
 import '../../../../core/helper/my_responsive.dart';
+import '../../../book_details/view/book_details_view.dart';
 import '../../manager/featured_books_cubit/featured_books_cubit.dart';
 import '../../manager/featured_books_cubit/featured_books_state.dart';
 import 'featured_list_view_item.dart';
@@ -26,9 +28,16 @@ class FeaturedBookListView extends StatelessWidget {
             itemBuilder: (context, index) {
               return Padding(
                 padding: MyResponsive.paddingOnly(right: 14),
-                child: FeaturedListViewItem(
-                  imageUrl:
-                      state.books[index].volumeInfo.imageLinks?.thumbnail ?? '',
+                child: GestureDetector(
+                  onTap: () {
+                    MyNavigator.goTo(
+                        screen: BookDetailsView(book: state.books[index]));
+                  },
+                  child: FeaturedListViewItem(
+                    imageUrl:
+                        state.books[index].volumeInfo?.imageLinks?.thumbnail ??
+                            '',
+                  ),
                 ),
               );
             },

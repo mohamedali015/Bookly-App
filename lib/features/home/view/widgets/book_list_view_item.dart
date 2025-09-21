@@ -20,14 +20,14 @@ class BookListViewItem extends StatelessWidget {
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
       onTap: () {
-        MyNavigator.goTo(screen: BookDetailsView());
+        MyNavigator.goTo(screen: BookDetailsView(book: book));
       },
       child: SizedBox(
-        height: MyResponsive.height(value: 110),
+        height: MyResponsive.height(value: 111),
         child: Row(
           children: [
             CustomBookImage(
-              imageUrl: book.volumeInfo.imageLinks?.thumbnail ?? '',
+              imageUrl: book.volumeInfo?.imageLinks?.thumbnail ?? '',
               aspectRatio: 70 / 105,
             ),
             SizedBox(
@@ -40,7 +40,7 @@ class BookListViewItem extends StatelessWidget {
                   SizedBox(
                     width: MyResponsive.width(value: 207),
                     child: Text(
-                      book.volumeInfo.title!,
+                      book.volumeInfo?.title ?? 'No Title',
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: AppFontStyles.textF20()
@@ -51,24 +51,25 @@ class BookListViewItem extends StatelessWidget {
                     height: MyResponsive.height(value: 3),
                   ),
                   Text(
-                    book.volumeInfo.authors![0],
+                    book.volumeInfo?.authors?[0] ?? 'No Author',
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: AppFontStyles.textF14(
                       color: AppColors.grey,
                     ),
                   ),
+                  const Spacer(),
                   Row(
                     children: [
                       Text(
                         'Free',
-                        style: AppFontStyles.textF20()
+                        style: AppFontStyles.textF18()
                             .copyWith(fontWeight: FontWeight.bold),
                       ),
                       const Spacer(),
                       BookRating(
-                        rating: book.volumeInfo.averageRating,
-                        count: book.volumeInfo.ratingsCount,
+                        rating: book.volumeInfo?.averageRating,
+                        count: book.volumeInfo?.ratingsCount,
                       )
                     ],
                   )

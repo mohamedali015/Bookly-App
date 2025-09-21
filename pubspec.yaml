@@ -41,6 +41,7 @@ dependencies:
   equatable:
   flutter_bloc:
   cached_network_image:
+  url_launcher:
 
   #network
   dio:

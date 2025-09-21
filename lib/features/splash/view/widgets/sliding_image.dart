@@ -18,12 +18,12 @@ class SlidingImage extends StatelessWidget {
         return SlideTransition(
           position: slidingAnimation,
           child: Image.asset(
-            AppAssets.logo,
+            AppAssets.logoEdited,
           ),
         );
       },
       child: Image.asset(
-        AppAssets.logo,
+        AppAssets.logoEdited,
         // height: MyResponsive.height(context, value: 250),
       ),
     );

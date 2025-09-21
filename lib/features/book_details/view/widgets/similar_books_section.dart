@@ -20,7 +20,7 @@ class SimilarBooksSection extends StatelessWidget {
         SizedBox(
           height: MyResponsive.height(value: 20),
         ),
-        // const SimilarBooksListView(),
+        const SimilarBooksListView(),
       ],
     );
   }
