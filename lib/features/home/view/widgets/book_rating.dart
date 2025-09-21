@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class BookRating extends StatelessWidget {
   const BookRating({super.key, required this.rating, required this.count});
 
-  final double? rating;
+  final num? rating;
   final int? count;
 
   @override

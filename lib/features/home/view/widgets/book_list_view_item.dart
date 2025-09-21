@@ -27,7 +27,7 @@ class BookListViewItem extends StatelessWidget {
         child: Row(
           children: [
             CustomBookImage(
-              imageUrl: book.volumeInfo.imageLinks.thumbnail,
+              imageUrl: book.volumeInfo.imageLinks?.thumbnail ?? '',
               aspectRatio: 70 / 105,
             ),
             SizedBox(
@@ -51,7 +51,9 @@ class BookListViewItem extends StatelessWidget {
                     height: MyResponsive.height(value: 3),
                   ),
                   Text(
-                    book.volumeInfo.authors!.first,
+                    book.volumeInfo.authors![0],
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: AppFontStyles.textF14(
                       color: AppColors.grey,
                     ),

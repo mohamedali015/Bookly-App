@@ -47,7 +47,8 @@ class ApiResponse {
     } else {
       return ApiResponse(
         statusCode: 500,
-        message: 'An unknown error occurred.',
+        // message: 'An unknown error occurred.',
+        message: error.toString(),
       );
     }
   }

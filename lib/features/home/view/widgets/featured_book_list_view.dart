@@ -27,7 +27,8 @@ class FeaturedBookListView extends StatelessWidget {
               return Padding(
                 padding: MyResponsive.paddingOnly(right: 14),
                 child: FeaturedListViewItem(
-                  imageUrl: state.books[index].volumeInfo.imageLinks.thumbnail,
+                  imageUrl:
+                      state.books[index].volumeInfo.imageLinks?.thumbnail ?? '',
                 ),
               );
             },
