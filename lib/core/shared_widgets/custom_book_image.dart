@@ -39,7 +39,7 @@ class CustomBookImage extends StatelessWidget {
               const Center(child: CircularProgressIndicator(strokeWidth: 2)),
           errorWidget: (context, url, error) =>
               const Icon(Icons.broken_image, size: 32),
-          fit: BoxFit.cover,
+          fit: BoxFit.fill,
         ),
       ),
     );

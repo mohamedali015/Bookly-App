@@ -1,4 +1,5 @@
 import 'package:bookly/core/network/api_helper.dart';
+import 'package:bookly/core/network/api_response.dart';
 import 'package:bookly/core/network/end_points.dart';
 import 'package:dartz/dartz.dart';
 
@@ -15,46 +16,42 @@ class HomeRepo {
   ApiHelper apiHelper = ApiHelper();
 
   // fetch Newest books
-  Future<Either<String, List<BookModel>>> fetchNewestBooks() async {
-    final response = await apiHelper.getRequest(
-      endPoint: EndPoints.newestBooks,
-    );
+  Future<Either<ApiResponse, List<BookModel>>> fetchNewestBooks() async {
+    try {
+      final response =
+          await apiHelper.getRequest(endPoint: EndPoints.newestBooks);
 
-    if (response.statusCode == 200 && response.data != null) {
-      try {
+      if (response.statusCode == 200 && response.data != null) {
         final List<BookModel> books = [];
         for (var item in response.data["items"]) {
           books.add(BookModel.fromJson(item));
         }
-
         return Right(books);
-      } catch (e) {
-        return Left("Parsing error: ${e.toString()}");
+      } else {
+        return Left(response);
       }
-    } else {
-      return Left(response.message);
+    } catch (e) {
+      return Left(ApiResponse.fromError(e));
     }
   }
 
   // featured books
-  Future<Either<String, List<BookModel>>> fetchFeaturedBooks() async {
-    final response = await apiHelper.getRequest(
-      endPoint: EndPoints.featuredBooks,
-    );
+  Future<Either<ApiResponse, List<BookModel>>> fetchFeaturedBooks() async {
+    try {
+      final response =
+          await apiHelper.getRequest(endPoint: EndPoints.featuredBooks);
 
-    if (response.statusCode == 200 && response.data != null) {
-      try {
+      if (response.statusCode == 200 && response.data != null) {
         final List<BookModel> books = [];
         for (var item in response.data["items"]) {
           books.add(BookModel.fromJson(item));
         }
-
         return Right(books);
-      } catch (e) {
-        return Left("Parsing error: ${e.toString()}");
+      } else {
+        return Left(response);
       }
-    } else {
-      return Left(response.message);
+    } catch (e) {
+      return Left(ApiResponse.fromError(e));
     }
   }
 }

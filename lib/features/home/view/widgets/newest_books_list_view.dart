@@ -16,9 +16,7 @@ class NewestBooksListView extends StatelessWidget {
     return BlocBuilder<NewestBooksCubit, NewestBooksState>(
         builder: (context, state) {
       if (state is NewestBooksSuccess) {
-        return ListView.builder(
-          padding: EdgeInsets.zero,
-          // physics: const NeverScrollableScrollPhysics(),
+        return SliverList.builder(
           itemCount: state.books.length,
           itemBuilder: (context, index) {
             return Padding(
@@ -30,14 +28,18 @@ class NewestBooksListView extends StatelessWidget {
           },
         );
       } else if (state is NewestBooksFailure) {
-        return SizedBox(
-          height: MyResponsive.height(value: 210),
-          child: CustomErrorWidget(errorMessage: state.errMessage),
+        return SliverToBoxAdapter(
+          child: SizedBox(
+            height: MyResponsive.height(value: 210),
+            child: CustomErrorWidget(errorMessage: state.errMessage),
+          ),
         );
       } else {
-        return SizedBox(
-          height: MyResponsive.height(value: 210),
-          child: const CustomLoadingIndicator(),
+        return SliverToBoxAdapter(
+          child: SizedBox(
+            height: MyResponsive.height(value: 210),
+            child: const CustomLoadingIndicator(),
+          ),
         );
       }
     });
