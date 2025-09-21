@@ -22,7 +22,7 @@ class CustomBookDetailsAppBar extends StatelessWidget {
         IconButton(
           onPressed: () {},
           icon: Icon(
-            Icons.shopping_cart_outlined,
+            Icons.bookmark_outline_outlined,
             size: MyResponsive.fontSize(value: 25),
           ),
         ),
