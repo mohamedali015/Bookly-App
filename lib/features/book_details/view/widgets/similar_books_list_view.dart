@@ -1,4 +1,3 @@
-import 'package:bookly/core/helper/my_navigator.dart';
 import 'package:bookly/core/helper/my_responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,46 +17,54 @@ class SimilarBooksListView extends StatelessWidget {
     return BlocBuilder<BookDetailsCubit, BookDetailsState>(
         builder: (context, state) {
       if (state is BookDetailsSuccess) {
-        return SizedBox(
-          height: MyResponsive.height(value: 110),
-          child: ListView.builder(
-            padding: EdgeInsets.zero,
-            itemCount: state.books.length,
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) {
-              return Padding(
-                padding: MyResponsive.paddingOnly(right: 10),
-                child: GestureDetector(
-                  behavior: HitTestBehavior.opaque,
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) =>
-                            BookDetailsView(book: state.books[index]),
-                      ),
-                    );
-                  },
-                  child: SimilarBooksListViewItem(
-                    imageUrl:
-                        state.books[index].volumeInfo.imageLinks?.thumbnail ??
-                            '',
+        if (state.books.isEmpty) {
+          return CustomErrorWidget(
+              errorMessage: 'There is No Books Similar to show !');
+        } else {
+          return SizedBox(
+            height: MyResponsive.height(value: 110),
+            child: ListView.builder(
+              padding: EdgeInsets.zero,
+              itemCount: state.books.length,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: MyResponsive.paddingOnly(right: 10),
+                  child: GestureDetector(
+                    behavior: HitTestBehavior.opaque,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) =>
+                              BookDetailsView(book: state.books[index]),
+                        ),
+                      );
+                    },
+                    child: SimilarBooksListViewItem(
+                      imageUrl:
+                          state.books[index].volumeInfo.imageLinks?.thumbnail ??
+                              '',
+                    ),
                   ),
-                ),
-              );
-            },
-          ),
-        );
+                );
+              },
+            ),
+          );
+        }
       } else if (state is BookDetailsFailure) {
         return SizedBox(
           height: MyResponsive.height(value: 110),
           child: CustomErrorWidget(errorMessage: state.errorMessage),
         );
-      } else {
+      } else if (state is BookDetailsLoading) {
         return SizedBox(
           height: MyResponsive.height(value: 110),
           child: const CustomLoadingIndicator(),
         );
+      } else {
+        return CustomErrorWidget(
+            errorMessage: 'There is No Books Similar to show !');
       }
     });
   }

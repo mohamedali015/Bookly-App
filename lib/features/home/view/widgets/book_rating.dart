@@ -22,14 +22,14 @@ class BookRating extends StatelessWidget {
           width: MyResponsive.width(value: 6),
         ),
         Text(
-          rating != null ? rating.toString() : '0',
+          rating != null ? rating.toString() : '4.7',
           style: AppFontStyles.textF16(),
         ),
         const SizedBox(
           width: 6,
         ),
         Text(
-          count != null ? '($count)' : '(0)',
+          count != null ? '($count)' : '(1239)',
           style: AppFontStyles.textF14(color: AppColors.grey),
         )
       ],

@@ -17,7 +17,7 @@ class BooksDetailsSection extends StatelessWidget {
     return Column(
       children: [
         Text(
-          book.volumeInfo?.title! ?? 'No Title',
+          book.volumeInfo?.title ?? 'No Title',
           style: AppFontStyles.textF30(),
           textAlign: TextAlign.center,
         ),
@@ -25,7 +25,7 @@ class BooksDetailsSection extends StatelessWidget {
           height: MyResponsive.height(value: 13),
         ),
         Text(
-          book.volumeInfo?.authors![0] ?? 'No Author',
+          book.volumeInfo?.authors?[0] ?? 'No Author',
           textAlign: TextAlign.center,
           style: AppFontStyles.textF18().copyWith(
             color: AppColors.grey,
