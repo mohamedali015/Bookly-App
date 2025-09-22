@@ -30,7 +30,7 @@ class SearchCubit extends Cubit<SearchState> {
 
     _debounce?.cancel();
 
-    _debounce = Timer(const Duration(milliseconds: 750), () async {
+    _debounce = Timer(const Duration(milliseconds: 600), () async {
       emit(SearchLoading());
 
       final result = await searchRepo.fetchSearchedBooks(search: value);
