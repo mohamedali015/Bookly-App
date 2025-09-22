@@ -16,5 +16,5 @@ flutter_native_splash:
     #    branding_mode: bottom
 
     color_dark: "#100B20"
-    image_dark: assets/images/AppSplash.png
+#    image_dark: assets/images/AppSplash.png
 #    branding_dark: assets/images/brandingLogo.png
