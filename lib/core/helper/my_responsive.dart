@@ -1,42 +1,85 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 
 abstract class MyResponsive {
-  static double height(context, {required double value}) =>
-      MediaQuery.of(context).size.height * (value / 1000);
+  /// Responsive width
+  static double width({required double value}) => value.w;
 
-  static double width(context, {required double value}) =>
-      MediaQuery.of(context).size.width * (value / 375);
+  /// Responsive height
+  static double height({required double value}) => value.h;
 
-  static double fontSize(context, {required double value}) =>
-      MediaQuery.of(context).size.width * (value / 375);
+  /// Responsive font size
+  static double fontSize({required double value}) => value.sp;
 
-  static EdgeInsets paddingSymmetric(
-    context, {
+  /// Responsive radius (BorderRadius / Border / any square dimension)
+  static double radius({required double value}) => value.r;
+
+  /// Responsive symmetric padding (horizontal & vertical)
+  static EdgeInsets paddingSymmetric({
     double? horizontal,
     double? vertical,
   }) {
     return EdgeInsets.symmetric(
-      horizontal: width(context, value: horizontal ?? 0),
-      vertical: height(context, value: vertical ?? 0),
+      horizontal: (horizontal ?? 0).w,
+      vertical: (vertical ?? 0).h,
     );
   }
 
-  static EdgeInsets paddingOnly(
-    context, {
+  /// Responsive padding for each side (left, right, top, bottom)
+  static EdgeInsets paddingOnly({
     double? left,
     double? right,
     double? top,
     double? bottom,
   }) {
     return EdgeInsets.only(
-      left: width(context, value: left ?? 0),
-      right: width(context, value: right ?? 0),
-      top: height(context, value: top ?? 0),
-      bottom: height(context, value: bottom ?? 0),
+      left: (left ?? 0).w,
+      right: (right ?? 0).w,
+      top: (top ?? 0).h,
+      bottom: (bottom ?? 0).h,
     );
   }
 
-  static EdgeInsets paddingAll(context, {required double value}) {
-    return EdgeInsets.all(width(context, value: value));
+  /// Responsive padding applied equally on all sides
+  static EdgeInsets paddingAll({required double value}) {
+    return EdgeInsets.all(value.w);
   }
 }
+
+// abstract class MyResponsive {
+//   static double height(BuildContext context, {required double value}) =>
+//       value.h; // ScreenUtil auto handles height
+//
+//   static double width(BuildContext context, {required double value}) =>
+//       value.w; // ScreenUtil auto handles width
+//
+//   static double fontSize(BuildContext context, {required double value}) =>
+//       value.sp; // sp for scalable fonts
+//
+//   static EdgeInsets paddingSymmetric(
+//       BuildContext context, {
+//         double? horizontal,
+//         double? vertical,
+//       }) {
+//     return EdgeInsets.symmetric(
+//       horizontal: (horizontal ?? 0).w,
+//       vertical: (vertical ?? 0).h,
+//     );
+//   }
+//
+//   static EdgeInsets paddingOnly(
+//       BuildContext context, {
+//         double? left,
+//         double? right,
+//         double? top,
+//         double? bottom,
+//       }) {
+//     return EdgeInsets.only(
+//       left: (left ?? 0).w,
+//       right: (right ?? 0).w,
+//       top: (top ?? 0).h,
+//       bottom: (bottom ?? 0).h,
+//     );
+//   }
+//
+// }
